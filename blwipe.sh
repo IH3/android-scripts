@@ -11,7 +11,12 @@
 # MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 # GNU General Public License for more details.
 
-fastboot -w
+fastboot erase recovery 
+fastboot erase boot
+fastboot erase cache
+fastboot erase system
+fastboot erase userdata
+fastboot erase vendor
 fastboot reboot-bootloader
 sleep 5
 fastboot erase recovery 
@@ -21,14 +26,8 @@ fastboot format system
 fastboot format userdata
 fastboot format vendor
 fastboot reboot-bootloader
-sleep 5
-fastboot erase recovery 
-fastboot erase boot
-fastboot erase cache
-fastboot erase system
-fastboot erase userdata
-fastboot erase vendor
-fastboot reboot-bootloader
+
 exit
+
 
 
