@@ -1,4 +1,12 @@
 #!/bin/bash
+
+function wait-for-device {
+    until adb shell true 2> /dev/null
+    do
+        sleep 1
+    done
+}
+
 fastboot erase recovery 
 fastboot erase boot
 fastboot erase cache
@@ -40,9 +48,9 @@ fastboot reboot-bootloader
 sleep 5
 for file in twrp*.img; do fastboot flash recovery $file; done
 fastboot boot twrp*.img
-sleep 15
+wait-for-device
 adb reboot recovery
-sleep 15
+wait-for-device
 for file in ABC*.zip open*.zip superuser.zip PL.zip ADB.zip; do adb push $file /sdcard; done
 adb shell twrp install ABC*.zip
 adb shell twrp install superuser.zip
