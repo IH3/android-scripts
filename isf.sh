@@ -54,7 +54,7 @@ wait-for-device
 for file in ABC*.zip Custom*.zip superuser.zip ADB.zip; do adb push $file /sdcard; done
 adb shell twrp install ABC*.zip
 adb shell twrp install superuser.zip
-adb shell twrp install open*.zip
+adb shell twrp install Custom*.zip
 adb shell twrp install ADB.zip
 sleep 3
 adb shell twrp wipe dalvik 
