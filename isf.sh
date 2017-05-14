@@ -51,12 +51,11 @@ fastboot boot twrp*.img
 wait-for-device
 adb reboot recovery
 wait-for-device
-for file in ABC*.zip open*.zip superuser.zip PL.zip ADB.zip; do adb push $file /sdcard; done
+for file in ABC*.zip Custom*.zip superuser.zip ADB.zip; do adb push $file /sdcard; done
 adb shell twrp install ABC*.zip
 adb shell twrp install superuser.zip
 adb shell twrp install open*.zip
 adb shell twrp install ADB.zip
-adb shell twrp install PL.zip
 sleep 3
 adb shell twrp wipe dalvik 
 sleep 3
