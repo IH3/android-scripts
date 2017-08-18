@@ -63,14 +63,20 @@ fastboot boot twrp*.img
 wait-for-device
 adb reboot recovery
 wait-for-device
-sleep 10
+sleep 5
 for file in ABC*.zip Beans*.zip superuser*.zip ADB.zip SSM.zip ADS.zip; do adb push $file /sdcard; done
-adb shell twrp install ABC*.zip
-adb shell twrp install Beans*.zip
-adb shell twrp install superuser*.zip
-adb shell twrp install ADB.zip
-adb shell twrp install SSM.zip
-adb shell twrp install ADS.zip
+adb shell twrp install /sdcard/ABC*.zip
+sleep 3
+adb shell twrp install /sdcard/Beans*.zip
+sleep 3
+adb shell twrp install /sdcard/superuser*.zip
+sleep 3
+adb shell twrp install /sdcard/ADB.zip
+sleep 3
+adb shell twrp install /sdcard/SSM.zip
+sleep 3
+adb shell twrp install /sdcard/ADS.zip
+sleep 3
 adb shell twrp wipe dalvik 
 adb shell twrp wipe cache
 adb reboot
