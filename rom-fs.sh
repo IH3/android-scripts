@@ -64,7 +64,7 @@ wait-for-device
 adb reboot recovery
 wait-for-device
 sleep 10
-for file in ABC*.zip open_gapps*.zip superuser*.zip ADB.zip SSM.zip ADS.zip; do adb push $file /sdcard; done
+for file in ABC*.zip Beans*.zip superuser*.zip ADB.zip SSM.zip ADS.zip; do adb push $file /sdcard; done
 adb shell twrp install ABC*.zip
 adb shell twrp install Beans*.zip
 adb shell twrp install superuser*.zip
