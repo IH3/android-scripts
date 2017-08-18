@@ -66,7 +66,7 @@ wait-for-device
 sleep 10
 for file in ABC*.zip open_gapps*.zip superuser*.zip ADB.zip SSM.zip ADS.zip; do adb push $file /sdcard; done
 adb shell twrp install ABC*.zip
-adb shell twrp install open_gapps*.zip
+adb shell twrp install Beans*.zip
 adb shell twrp install superuser*.zip
 adb shell twrp install ADB.zip
 adb shell twrp install SSM.zip
