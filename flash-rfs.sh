@@ -64,7 +64,7 @@ wait-for-device
 adb reboot recovery
 wait-for-device
 sleep 5
-for file in purenexus*.zip Beans*.zip superuser*.zip ADB.zip SSM.zip ADS.zip; do adb push $file /sdcard; done
+for file in purenexus*.zip Beans*.zip superuser*.zip ADB.zip SSM.zip ADS.zip AOSP-Keyboard.zip; do adb push $file /sdcard; done
 adb shell twrp install /sdcard/purenexus*.zip
 sleep 3
 adb shell twrp install /sdcard/Beans*.zip
@@ -76,6 +76,8 @@ sleep 3
 adb shell twrp install /sdcard/SSM.zip
 sleep 3
 adb shell twrp install /sdcard/ADS.zip
+sleep 3
+adb shell twrp install /sdcard/AOSP-Keyboard.zip
 sleep 3
 adb shell twrp wipe dalvik 
 adb shell twrp wipe cache
