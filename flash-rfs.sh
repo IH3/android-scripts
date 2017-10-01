@@ -64,16 +64,12 @@ wait-for-device
 adb reboot recovery
 wait-for-device
 sleep 5
-for file in ABCrom*.zip BeansGapps*.zip Magisk*.zip ADB.zip SSM.zip ADS.zip; do adb push $file /sdcard; done
+for file in ABCrom*.zip BeansGapps*.zip Magisk*.zip ADS.zip; do adb push $file /sdcard; done
 adb shell twrp install /sdcard/ABCrom*.zip
 sleep 3
 adb shell twrp install /sdcard/BeansGapps*.zip
 sleep 3
 adb shell twrp install /sdcard/Magisk*.zip
-sleep 3
-adb shell twrp install /sdcard/ADB.zip
-sleep 3
-adb shell twrp install /sdcard/SSM.zip
 sleep 3
 adb shell twrp install /sdcard/ADS.zip
 sleep 3
