@@ -70,16 +70,16 @@ echo "Magic happening:"
 echo "-----------------"
 echo -e "${restore}"
 
-while read -p "Do you want to use UBERTC 4.9(1)? " echoice
+while read -p "Do you want to use GCC 4.9(1)? " echoice
 do
 case "$echoice" in
 
 	1 )
 		export PATH=$PATH:~/android/toolchain/aarch64-linux-android-4.9/prebuilt/linux-x86_64/bin
 		export CROSS_COMPILE=aarch64-linux-android-
-		TC="UBER4.9"
+		TC="GCC4.9"
 		echo
-		echo "Using UBERTC 4.9"
+		echo "Using GCC 4.9"
 		break
 		;;
 	* )
