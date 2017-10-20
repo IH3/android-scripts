@@ -75,7 +75,7 @@ do
 case "$echoice" in
 
 	1 )
-		export PATH=$PATH:~/android/toolchain/aarch64-linux-android-4.9/bin
+		export PATH=$PATH:~/android/toolchain/aarch64-linux-android-4.9/prebuilt/linux-x86_64/bin
 		export CROSS_COMPILE=aarch64-linux-android-
 		TC="UBER4.9"
 		echo
