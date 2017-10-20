@@ -70,7 +70,7 @@ echo "Magic happening:"
 echo "-----------------"
 echo -e "${restore}"
 
-while read -p "Do you want to use GCC 4.9(1)? " echoice
+while read -p "Do you want to use GCC 4.9(1) ?" echoice
 do
 case "$echoice" in
 
@@ -102,7 +102,7 @@ export KBUILD_BUILD_HOST=bl
 
 echo
 
-while read -p "Do you want to clean stuffs (y/n)? " cchoice
+while read -p "Do you want to clean stuffs (y/n) ?" cchoice
 do
 case "$cchoice" in
 	y|Y )
@@ -124,7 +124,7 @@ done
 
 echo
 
-while read -p "Do you want to build?" dchoice
+while read -p "Do you want to build (y/n) ?" dchoice
 do
 case "$dchoice" in
 	y|Y )
