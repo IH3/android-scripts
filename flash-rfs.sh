@@ -33,47 +33,25 @@ fastboot format userdata
 fastboot format vendor
 fastboot reboot-bootloader
 sleep 5
-for file in bootloader*.img; do fastboot flash bootloader $file; done
-fastboot reboot-bootloader
-sleep 5
-for file in radio*.img; do fastboot flash radio $file; done
-fastboot reboot-bootloader
-sleep 5
-fastboot erase recovery 
-fastboot erase boot
-fastboot erase cache
-fastboot erase system
-fastboot erase userdata
-fastboot erase vendor
-fastboot reboot-bootloader
-sleep 5
-fastboot erase recovery 
-fastboot erase boot
-fastboot format cache
-fastboot format system
-fastboot format userdata
-fastboot format vendor
-fastboot reboot-bootloader
-sleep 5
-for file in vendor*.img; do fastboot flash vendor $file; done
-fastboot reboot-bootloader
-sleep 5
 for file in twrp*.img; do fastboot flash recovery $file; done
 fastboot boot twrp*.img
 wait-for-device
 adb reboot recovery
 wait-for-device
 sleep 5
-for file in ABCrom*.zip BeansGapps*.zip Magisk*.zip ADS.zip SSM.zip; do adb push $file /sdcard; done
-adb shell twrp install /sdcard/ABCrom*.zip
+for file in miui*.zip lineage*.zip BeansGapps*.zip Magisk*.zip iYTBPforMagisk*.zip Unified_Hosts_Adblock*.zip; do adb push $file /sdcard; done
+sleep 3
+adb shell twrp install /sdcard/miui*.zip
+sleep 3
+adb shell twrp install /sdcard/lineage*.zip
 sleep 3
 adb shell twrp install /sdcard/BeansGapps*.zip
 sleep 3
 adb shell twrp install /sdcard/Magisk*.zip
 sleep 3
-adb shell twrp install /sdcard/SSM.zip
+adb shell twrp install /sdcard/Unified_Hosts_Adblock*.zip
 sleep 3
-adb shell twrp install /sdcard/ADS.zip
+adb shell twrp install /sdcard/iYTBPforMagisk*.zip
 sleep 3
 adb shell twrp wipe dalvik 
 adb shell twrp wipe cache
