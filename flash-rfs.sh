@@ -39,19 +39,21 @@ wait-for-device
 adb reboot recovery
 wait-for-device
 sleep 5
-for file in miui*.zip lineage*.zip BeansGapps*.zip Magisk*.zip iYTBPforMagisk*.zip Unified_Hosts_Adblock*.zip; do adb push $file /sdcard; done
+for file in miui*.zip lineage*.zip open_gapps-arm64*.zip Magisk*.zip iYTBPforMagisk*.zip Font*.zip ADS*.zip; do adb push $file /sdcard; done
 sleep 3
 adb shell twrp install /sdcard/miui*.zip
 sleep 3
 adb shell twrp install /sdcard/lineage*.zip
 sleep 3
-adb shell twrp install /sdcard/BeansGapps*.zip
+adb shell twrp install /sdcard/open_gapps-arm64*.zip
 sleep 3
 adb shell twrp install /sdcard/Magisk*.zip
 sleep 3
-adb shell twrp install /sdcard/Unified_Hosts_Adblock*.zip
-sleep 3
 adb shell twrp install /sdcard/iYTBPforMagisk*.zip
+sleep 3
+adb shell twrp install /sdcard/Font*.zip
+sleep 3
+adb shell twrp install /sdcard/ADS*.zip
 sleep 3
 adb shell twrp wipe dalvik 
 adb shell twrp wipe cache
