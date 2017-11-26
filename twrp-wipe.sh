@@ -12,11 +12,8 @@
 # GNU General Public License for more details.
 
 adb shell twrp wipe dalvik 
-sleep 3
 adb shell twrp wipe cache
-sleep 3
 adb shell twrp wipe system
-sleep 3
 adb shell twrp wipe data
 
 exit
