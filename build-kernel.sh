@@ -12,18 +12,18 @@ clear
 THREAD="-j$(grep -c ^processor /proc/cpuinfo)"
 KERNEL="Image"
 DTBIMAGE="dtb"
-DEFCONFIG="bullhead_defconfig"
+DEFCONFIG="sagit_user_defconfig"
 
 # Kernel Details
-VER="ICB.bullhead"
+VER="ICB.sagit"
 
 # Paths
 KERNEL_DIR=`pwd`
-REPACK_DIR="${HOME}/android/AnyKernel2"
-PATCH_DIR="${HOME}/android/AnyKernel2/patch"
-MODULES_DIR="${HOME}/android/AnyKernel2/modules"
-ZIP_MOVE="${HOME}/android/AKreleases"
-ZIMAGE_DIR="${HOME}/android/source/kernel/bullhead/pure/arch/arm64/boot/"
+REPACK_DIR="$~/android/AnyKernel2"
+PATCH_DIR="$~/android/AnyKernel2/patch"
+MODULES_DIR="$~/android/AnyKernel2/modules"
+ZIP_MOVE="$~/android/AKreleases"
+ZIMAGE_DIR="$~/android/source/kernel/sagit/arch/arm64/boot/"
 
 # Functions
 function clean_all {
@@ -98,7 +98,7 @@ export LOCALVERSION=~`echo $AK_VER`
 export ARCH=arm64
 export SUBARCH=arm64
 export KBUILD_BUILD_USER=icrunchbanger
-export KBUILD_BUILD_HOST=bl
+export KBUILD_BUILD_HOST=archlinux
 
 echo
 
