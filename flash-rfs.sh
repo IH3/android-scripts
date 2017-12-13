@@ -39,13 +39,13 @@ wait-for-device
 adb reboot recovery
 wait-for-device
 sleep 5
-for file in miui*.zip rom*.zip open_gapps-arm64*.zip Magisk*.zip Font*.zip ADS*.zip; do adb push $file /sdcard; done
+for file in miui*.zip rom*.zip gapps*.zip Magisk*.zip Font*.zip ADS*.zip; do adb push $file /sdcard; done
 sleep 3
 adb shell twrp install /sdcard/miui*.zip
 sleep 3
 adb shell twrp install /sdcard/rom*.zip
 sleep 3
-adb shell twrp install /sdcard/open_gapps-arm64*.zip
+adb shell twrp install /sdcard/gapps*.zip
 sleep 3
 adb shell twrp install /sdcard/Magisk*.zip
 sleep 3
