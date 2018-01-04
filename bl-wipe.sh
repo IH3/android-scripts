@@ -16,7 +16,6 @@ fastboot erase boot
 fastboot erase cache
 fastboot erase system
 fastboot erase userdata
-fastboot erase vendor
 fastboot reboot-bootloader
 sleep 5
 fastboot erase recovery 
@@ -24,7 +23,6 @@ fastboot erase boot
 fastboot format cache
 fastboot format system
 fastboot format userdata
-fastboot format vendor
 fastboot reboot-bootloader
 
 exit
