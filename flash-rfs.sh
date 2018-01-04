@@ -39,9 +39,9 @@ wait-for-device
 adb reboot recovery
 wait-for-device
 sleep 5
-for file in miui*.zip rom*.zip gapps*.zip Magisk*.zip Font*.zip ADS*.zip; do adb push $file /sdcard; done
+for file in *firmware.zip rom*.zip gapps*.zip Magisk*.zip Font*.zip ADS*.zip; do adb push $file /sdcard; done
 sleep 3
-adb shell twrp install /sdcard/miui*.zip
+adb shell twrp install /sdcard/*firmware.zip
 sleep 3
 adb shell twrp install /sdcard/rom*.zip
 sleep 3
