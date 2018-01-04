@@ -22,41 +22,27 @@ fastboot erase boot
 fastboot erase cache
 fastboot erase system
 fastboot erase userdata
-fastboot erase vendor
 fastboot reboot-bootloader
-sleep 5
+sleep 3
 fastboot erase recovery 
 fastboot erase boot
 fastboot format cache
 fastboot format system
 fastboot format userdata
-fastboot format vendor
 fastboot reboot-bootloader
-sleep 5
+sleep 3
 for file in twrp*.img; do fastboot flash recovery $file; done
 fastboot boot twrp*.img
 wait-for-device
-adb reboot recovery
-wait-for-device
-sleep 5
 for file in *firmware.zip rom*.zip gapps*.zip Magisk*.zip Font*.zip ADS*.zip; do adb push $file /sdcard; done
-sleep 3
 adb shell twrp install /sdcard/*firmware.zip
-sleep 3
 adb shell twrp install /sdcard/rom*.zip
-sleep 3
 adb shell twrp install /sdcard/gapps*.zip
-sleep 3
 adb shell twrp install /sdcard/Magisk*.zip
-sleep 3
 adb shell twrp install /sdcard/Font*.zip
-sleep 3
 adb shell twrp install /sdcard/ADS*.zip
-sleep 3
 adb shell twrp wipe dalvik 
 adb shell twrp wipe cache
 adb reboot
-
-
 
 exit
