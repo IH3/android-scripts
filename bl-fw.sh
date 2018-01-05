@@ -104,6 +104,10 @@ if [ $? -ne 0 ] ; then echo "Flash cust error"; exit 1; fi
 fastboot $* reboot
 if [ $? -ne 0 ] ; then echo "Reboot error"; exit 1; fi
 sleep 5
+fastboot $* erase boot
+if [ $? -ne 0 ] ; then echo "Erase boot error"; exit 1; fi
+fastboot $* erase recovery
+if [ $? -ne 0 ] ; then echo "Erase recovery error"; exit 1; fi
 fastboot $* format system
 if [ $? -ne 0 ] ; then echo "Format system error"; exit 1; fi
 fastboot $* format cache
