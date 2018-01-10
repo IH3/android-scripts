@@ -17,20 +17,6 @@ function wait-for-device {
     done
 }
 
-fastboot erase recovery 
-fastboot erase boot
-fastboot erase cache
-fastboot erase system
-fastboot erase userdata
-fastboot reboot-bootloader
-sleep 3
-fastboot erase recovery 
-fastboot erase boot
-fastboot format cache
-fastboot format system
-fastboot format userdata
-fastboot reboot-bootloader
-sleep 3
 for file in twrp*.img; do fastboot flash recovery $file; done
 fastboot boot twrp*.img
 wait-for-device
