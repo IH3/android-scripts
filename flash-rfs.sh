@@ -34,8 +34,7 @@ sleep 3
 for file in twrp*.img; do fastboot flash recovery $file; done
 fastboot boot twrp*.img
 wait-for-device
-for file in *firmware.zip rom*.zip gapps*.zip Magisk*.zip Font*.zip ADS*.zip; do adb push $file /sdcard; done
-adb shell twrp install /sdcard/*firmware.zip
+for file in rom*.zip gapps*.zip Magisk*.zip Font*.zip ADS*.zip; do adb push $file /sdcard; done
 adb shell twrp install /sdcard/rom*.zip
 adb shell twrp install /sdcard/gapps*.zip
 adb shell twrp install /sdcard/Magisk*.zip
